@@ -1,0 +1,22 @@
+version: 1.0
+runtime: nodejs18
+build:
+  commands:
+    pre-build:
+      - npm install
+    build:
+      - npm run build
+  env:
+    - name: NEXT_PUBLIC_LIVE_URL
+      value: https://your-server-URL/
+    - name: MY_VAR_EXAMPLE
+      value: example
+run: 
+  command: npm start
+  network:
+    port: 3000
+  env:
+    - name: NEXT_PUBLIC_LIVE_URL
+      value: https://your-server-URL/
+    - name: MY_VAR_EXAMPLE
+      value: example
